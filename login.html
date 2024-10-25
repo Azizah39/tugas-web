@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Login</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+
+
+    <div class="login-container">
+        <div class="logout-container">
+            <a href="index.html">Keluar</a>
+        </div>
+        <h2>Login</h2>
+        <form action="masuk.html" method="post">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" required>
+                    <span class="toggle-password" onclick="togglePasswordVisibility()">👁️</span>
+                </div>
+            </div>
+            <button type="submit">Masuk</button>
+            <p>Belum punya akun? <a href="formulir.html">Daftar di sini</a></p>
+
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const passwordToggle = document.querySelector('.toggle-password');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                passwordToggle.textContent = '🙈'; // Mengubah ikon mata tertutup
+            } else {
+                passwordInput.type = 'password';
+                passwordToggle.textContent = '👁️'; // Mengubah kembali ke ikon mata
+            }
+        }
+    </script>
+</body>
+</html>
